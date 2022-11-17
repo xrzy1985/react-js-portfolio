@@ -19,7 +19,6 @@ export default function Header(props) {
                     <a href={details[3]}>GitHub</a> | 
                     <a href={details[4]}>Email</a>
                 </h5>
-                <br />
                 <div class="profile-photo">
                     <img src={require('../../assets/profile.jpg')}
                         alt="A man named James smiling with short hair and a grin on his face" height="200px" />
