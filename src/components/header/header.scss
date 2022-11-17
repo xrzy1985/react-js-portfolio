@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(#61DAFB, white);
+
+    h1, h2, h3, h5, a {
+        color: #0265E2;
+    }
+}
+
+.profile-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        border-radius: 50%;
+        border-style: outset;
+        margin-bottom: 5vh;
+    }
+}
