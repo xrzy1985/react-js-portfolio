@@ -1,27 +1,92 @@
-// $base-color: #61DAFB;
-// $border-dark: rgba($base-color, 0.88);
+.left-bar {
+    height: calc(100% - 5px);
+    width: 25vw;
+    background-color: #55B68B;
+    border-right-style: outset;
+    border-bottom-style: outset;
+    border-right: 5px solid #2A5B44;
+    border-bottom: 5px solid #2A5B44;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
-// .header {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     flex-direction: column;
-//     background-image: linear-gradient($base-color, white);
+    .wrapper {
+        margin: 20px 0;
+    }
 
-//     h1, h2, h3, h5, a {
-//         color: #0265E2;
-//         text-shadow: .75px .75px #fff;
-//     }
-// }
+    .shadow {
+        text-shadow: 1px 1px #2A5B44;
+    }
+    
+    h1, h3, .paths {
+        color: white;
+    }
 
-// .profile-photo {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
+    img {
+        border-radius: 50%;
+    }
 
-//     img {
-//         border-radius: 50%;
-//         border-style: outset;
-//         margin: 5vh 0;
-//     }
-// }
+    .links-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .paths {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .content {
+        height: 100%;
+        @media screen and (min-width: 1024px) {
+            width: 100%;
+            overflow: initial;
+        }
+    }
+
+    @media only screen and (max-width: 1100px) {
+        .left-bar {
+            width: 100%;
+        }
+
+        .wrapper {
+            margin: 5px 0;
+        }
+
+        .links-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .paths {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            @media only screen and (max-width: 420px) {
+                font-size: smaller;
+            }
+        }
+    }    
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .left-bar {
+        overflow: initial;
+        width: calc(100% - 5px);
+        height: auto;
+    }
+}
