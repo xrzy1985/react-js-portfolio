@@ -19,8 +19,6 @@ export default function Main(props) {
                 return <Projects selected={selected}/>
             case selections[2]:
                 return <Resume selected={selected}/>
-            case selections[3]:
-                return <span>{selections[3]}</span>
             default:
                 return null
         }
