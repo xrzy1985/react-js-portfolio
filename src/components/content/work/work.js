@@ -2,12 +2,12 @@ import './work.scss';
 import { useState } from 'react';
 
 export default function WorkExperience(props) {
-    const [state] = useState({
-        current: `I am currently working as a front end engineer migrating a legacy AngularJS 
+    const [work] = useState([
+        { header: 'Current Role', details: `I am currently working as a front end engineer migrating a legacy AngularJS 
             application to a newer version of Angular, 14. The role is an on going contract position
             without a clear defined end in sight. I am utilizing skills I have previous gained from
-            past employers, while learning new skills to add to the tool belt.`,
-        experience: `I have worked primarily as a front end software engineer since the inception of
+            past employers, while learning new skills to add to the tool belt.`},
+        { header: 'Experience', details: `I have worked primarily as a front end software engineer since the inception of
             my career. My first job I was apart of a full stack dev ops team. I had a few back end 
             micro services that I maintained; building out new services, adding new tables to the 
             database, normalize the data, and all of the previous functionality was within a Java spring
@@ -35,32 +35,40 @@ export default function WorkExperience(props) {
             to take a different direction, and focus on all new development being in React. Before I left, my 
             primary functions were to write reusable components for our various React projects, implement new 
             features within various mobile projects, and general bug fixes across several teams, mobile and hybrid.
-            `,
-        tech: {
-            hardware: `VS Code, Microsoft Office Suite, PC, Mac`,
-            languages: `Javascript, Typescript, CSS, SCSS, RxJs, Java, SQL`,
-            frameworks: `Angular Js, Angular 8 - Current, ReactJs, NodeJs, Spring Boot`,
-            type: `Desktop, Hybrid, and Mobile utilizing response web design`,
-        }
-        // tech: `Javascript, Typescript, NodeJs, CSS, SCSS, RxJs, Angular Js, Angular 6+, ReactJs, Java, SQL | 
-        //     Desktop, Hybrid, and Mobile utilizing response web design | VS Code, Microsoft Office Suite, PC, Mac`
-    });
+            `},
+        { header: 'Technologies', details: [
+            `Desktop, Hybrid, and Mobile applications that utilize responsive web design`,
+            `Angular Js, Angular 8 - Current, ReactJs, NodeJs, Spring Boot`,
+            `Javascript, Typescript, CSS, SCSS, RxJs, Java, SQL`,
+            `VS Code, Microsoft Office Suite, PC, Mac`,
+        ]}
+    ]);
+
     return (
         <section className="work-section">
-            <h1>Current Role</h1>
-            <span>{state.current}</span>
-            <h1>Experience</h1>
-            <span>{state.experience}</span>
-            <h1>Technologies</h1>
-            <div className="tech">
-                <span>{state.tech.frameworks}</span>
-                <span className="mobile"> | </span>
-                <span>{state.tech.languages}</span>
-                <span className="mobile"> | </span>
-                <span>{state.tech.type}</span>
-                <span className="mobile"> | </span>
-                <span>{state.tech.hardware}</span>
-            </div>
+            {
+                work.map((experience, index) => {
+                    return <div key={`experience_${index}`}>
+                            <h1>{experience.header}</h1>
+                            { 
+                                !Array.isArray(experience.details) ? <span>{experience.details}</span> :
+                                <div className="tech">
+                                    {
+                                        experience.details.map((t, i) => {
+                                            return <span key={i}>
+                                                {
+                                                    i > 0 ? <span className="mobile"> | </span> : null
+                                                }
+                                                <span>{t}</span>
+                                            </span>
+                                        })
+                                    }
+                                </div>
+                            }
+                        </div>
+                    }
+                )
+            }
         </section>
     );
 }
