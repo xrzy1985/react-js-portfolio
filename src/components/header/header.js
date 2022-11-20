@@ -39,7 +39,9 @@ export default function Header(props) {
             <div className="links-bar">
                 {
                     sources.map((src, i) => {
-                        return <a href={links[i]} key={`${src}_${i}`}><img key={`$img_${i}`} src={src} alt={alts[i + 1]} /></a>
+                        return <a href={links[i]} key={`${src}_${i}`}>
+                            <img className="img-icons" key={`$img_${i}`} src={src} alt={alts[i + 1]} />
+                        </a>
                     })
                 }
             </div>

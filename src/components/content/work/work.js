@@ -39,7 +39,7 @@ export default function WorkExperience(props) {
         { header: 'Technologies', details: [
             `Desktop, Hybrid, and Mobile applications that utilize responsive web design`,
             `Angular Js, Angular 8 - Current, ReactJs, NodeJs, Spring Boot`,
-            `Javascript, Typescript, CSS, SCSS, RxJs, Java, SQL`,
+            `Javascript, Typescript, HTML, CSS, SCSS, RxJs, Java, SQL`,
             `VS Code, Microsoft Office Suite, PC, Mac`,
         ]}
     ]);

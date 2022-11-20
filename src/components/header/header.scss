@@ -37,6 +37,14 @@
         justify-content: space-around;
         margin-bottom: 20px;
         width: 100%;
+
+        @media (max-height: 680px) {
+            a {
+                img {
+                    height: 24px;
+                }
+            }
+        }
     }
 
     .paths {
@@ -61,7 +69,18 @@
         align-items: center;
         position: absolute;
         bottom: 25px;
-        color: var(--text);;
+        color: var(--text);
+        
+        @media (max-height: 680px) {
+            span {
+                img {
+                    height: 24px;
+                }
+            }
+        }
+        @media (max-height: 630px) {
+            display: none;
+        }
     }
 
     hr {
