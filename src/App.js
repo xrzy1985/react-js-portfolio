@@ -5,7 +5,7 @@ import Main from './components/main/main';
 import { useState } from 'react';
 
 function App() {
-  const [selections] = useState(['About Me', 'Projects', 'Resume']);
+  const [selections] = useState(['About Me', 'Resume', 'Work Experience']);
   return (
     <Main selections={selections}/>
   );
