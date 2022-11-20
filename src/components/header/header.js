@@ -43,6 +43,7 @@ export default function Header(props) {
                     })
                 }
             </div>
+            <hr />
             <div className="paths wrapper">
                 {
                     selections.map((s, i) => {
@@ -50,9 +51,9 @@ export default function Header(props) {
                     })
                 }
             </div>
+            <hr />
             <div className="header-footer">
                 <small>Brought to you by</small>
-                <br/>
                 <span>{ used.map((src, i) => { return <img key={`$img_${i}`} src={src} alt={alts[i + 1]} /> }) }</span>
             </div>
         </header>
