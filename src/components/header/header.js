@@ -11,16 +11,8 @@ import js from '../../assets/js.png';
 import { useEffect, useState } from 'react';
 
 export default function Header(props) {
-    const [alts] = useState([
-        'A man named James smiling with short hair and a grin on his face',
-        'linked in profile link',
-        'A link to email James\' directly',
-        'github link to James\' repositories']);
-    const [links] = useState([
-        'https://github.com/xrzy1985',
-        'https://www.linkedin.com/in/james-earl-patterson',
-        'mailto:jamespatterson.feswe@yahoo.com',
-        '../../assets/profile.jpg']);
+    const [alts] = useState(props.state.alts);
+    const [links] = useState(props.state.links);
     const [selections] = useState(props.selections);
     const [selected, setSelected] = useState(selections[0]);
     const [selectedCss] = useState({ 'color': 'var(--primary)','textShadow': '1.5px 1px var(--link-shadow)' });

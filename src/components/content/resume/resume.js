@@ -6,30 +6,27 @@ import img from '../../../assets/resumes/resume.jpg';
 import { useState } from 'react';
 
 export default function Resume(props) {
+    const [srcs] = useState([doc, docx, pdf]);
     const [state] = useState({
-        path: '/resumes/',
-        links: [
-            { alt: 'A download for James\'s resume in doc format', path: 'resume.doc', src: doc },
-            { alt: 'A download for James\'s resume in docx format', path: 'resume.docx', src: docx },
-            { alt: 'A download for James\'s resume in pdf format', path: 'resume.pdf', src: pdf }
-        ]
+        path: props.state.path,
+        links: props.state.links.map((link, i) => { return { ...link, src: srcs[i] }; })
     });
     return (
         <div className="resume">
-            <h2>Download Links</h2>
+            <h2>{props.state.resumeHeader}</h2>
             <section className="links">
                 {
                     state.links.map(link => {
                         return <span>
-                                    <a href={process.env.PUBLIC_URL + `${state.path}${link.path}`} download rel="noreferrer" target="_blank">
-                                        <img src={link.src} alt={link.alt} />
-                                    </a>
-                                </span>
+                            <a href={process.env.PUBLIC_URL + `${state.path}${link.path}`} download rel="noreferrer" target="_blank">
+                                <img src={link.src} alt={link.alt} />
+                            </a>
+                        </span>
                     })
                 }
             </section>
             <section className="img-container">
-                <img src={img} alt="Version of James\'s resume" />
+                <img src={img} alt={props.state.resumeAlt} />
             </section>
         </div>
     );

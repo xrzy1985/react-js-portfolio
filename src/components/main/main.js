@@ -6,7 +6,7 @@ import Resume from '../content/resume/resume';
 import { useState } from 'react';
 
 export default function Main(props) {
-    const [selections] = useState(props.selections);
+    const [selections] = useState(props.state.selections);
     const [selected, setSelected] = useState(selections[0]);
 
     const changeContent = (content) => setSelected(content);
@@ -14,11 +14,11 @@ export default function Main(props) {
     const getComponent = () => {
         switch (selected) {
             case selections[0]:
-                return <About selected={selected}/>
+                return <About selected={selected} state={props.state}/>
             case selections[1]:
-                return <Resume selected={selected}/>
+                return <Resume selected={selected} state={props.state}/>
             case selections[2]:
-                return <WorkExperience selected={selected}/>
+                return <WorkExperience selected={selected} state={props.state}/>
             default:
                 return null
         }
@@ -26,7 +26,7 @@ export default function Main(props) {
 
     return (
         <main className="main">
-            <Header selections={selections} changeContent={changeContent}/>
+            <Header changeContent={changeContent} selections={selections} state={props.state.header}/>
             <div className="content">
                 { getComponent() }
             </div>
