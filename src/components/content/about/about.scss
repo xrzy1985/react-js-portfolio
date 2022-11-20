@@ -9,6 +9,10 @@
     justify-content: center;
     margin: 20px 0;
     gap: 20px;
+    
+    .header {
+        text-shadow: 1.5px 1px var(--primary);
+    }
 
     span {
         margin: 0 100px;
