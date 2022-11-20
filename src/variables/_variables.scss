@@ -1,0 +1,15 @@
+$dark-theme-background: #282c34;
+$dark-theme-text: #fff;
+$dark-theme-primary: #2A5B44;
+$dark-theme-secondary: #55B68B;
+$dark-theme-link-shadow: #E3E3E3;
+$dark-theme-link-shadow-dark: #3e4450;
+
+:root {
+  --background: #{$dark-theme-background};
+  --text: #{$dark-theme-text};
+  --primary: #{$dark-theme-primary};
+  --secondary: #{$dark-theme-secondary};
+  --link-shadow: #{$dark-theme-link-shadow};
+  --link-shadow-dark: #{$dark-theme-link-shadow-dark};
+}

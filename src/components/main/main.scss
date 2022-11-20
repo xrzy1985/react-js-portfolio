@@ -1,6 +1,8 @@
+@import url('../../variables/_variables.scss');
+
 .main {
     height: 96vh;
-    background-color: lightgrey;
+    background-color: var(--background);
     display: flex;
     flex-direction: row;
     margin: 2vh;

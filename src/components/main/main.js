@@ -1,6 +1,8 @@
 import './main.scss';
 import About from '../content/about/about';
 import Header from '../header/header';
+import Projects from '../content/projects/projects';
+import Resume from '../content/resume/resume';
 import { useState } from 'react';
 
 export default function Main(props) {
@@ -14,83 +16,11 @@ export default function Main(props) {
             case selections[0]:
                 return <About selected={selected}/>
             case selections[1]:
-                return <span>{selections[1]}</span>
+                return <Projects selected={selected}/>
             case selections[2]:
-                return <span>{selections[2]}</span>
+                return <Resume selected={selected}/>
             case selections[3]:
                 return <span>{selections[3]}</span>
-            case selections[4]:
-                return <div style={{'display': 'flex', 'flexDirection': 'column'}}>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>span</p>
-                <p>last</p>
-            </div>
             default:
                 return null
         }

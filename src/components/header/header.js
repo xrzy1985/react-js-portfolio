@@ -1,8 +1,13 @@
 import './header.scss';
+import '../../variables/_variables.scss';
 import linkedIn from '../../assets/linkedIn.png';
 import github from '../../assets/github.svg';
 import email from '../../assets/email.png';
 import photo from '../../assets/profile.jpg';
+import react from '../../assets/react.svg';
+import html from '../../assets/html.png';
+import scss from '../../assets/scss.png';
+import js from '../../assets/js.png';
 import { useEffect, useState } from 'react';
 
 export default function Header(props) {
@@ -18,8 +23,9 @@ export default function Header(props) {
         '../../assets/profile.jpg']);
     const [selections] = useState(props.selections);
     const [selected, setSelected] = useState(selections[0]);
-    const [selectedCss] = useState({ 'color': '#2A5B44','textShadow': '1px 1px #E3E3E3' });
+    const [selectedCss] = useState({ 'color': 'var(--primary)','textShadow': '1.5px 1px var(--link-shadow)' });
     const [sources] = useState([github, linkedIn, email]);
+    const [used] = useState([react, js, html, scss]);
     
     useEffect(() => {
         props.changeContent(selected);
@@ -43,6 +49,11 @@ export default function Header(props) {
                         return <span onClick={() => {setSelected(s)}} key={s} style={selected === s ? selectedCss : null }>{s}</span>
                     })
                 }
+            </div>
+            <div className="header-footer">
+                <span>Brought to you by</span>
+                <br/>
+                <span>{ used.map((src, i) => { return <img key={`$img_${i}`} src={src} alt={alts[i + 1]} /> }) }</span>
             </div>
         </header>
     );
