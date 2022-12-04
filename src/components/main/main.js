@@ -16,8 +16,10 @@ export default function Main(props) {
             case selections[0]:
                 return <About selected={selected} state={props.state}/>
             case selections[1]:
-                return <Resume selected={selected} state={props.state}/>
+                return <div></div>
             case selections[2]:
+                return <Resume selected={selected} state={props.state}/>
+            case selections[3]:
                 return <WorkExperience selected={selected} state={props.state}/>
             default:
                 return null
