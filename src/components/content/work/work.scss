@@ -11,6 +11,10 @@
         margin: 20px 0;
         gap: 20px;
 
+        h2 {
+            font-size: 1.25em !important;
+        }
+
         .header {
             color: var(--secondary);
             text-shadow: 1.5px 1px var(--primary);

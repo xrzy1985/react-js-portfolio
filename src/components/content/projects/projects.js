@@ -1,4 +1,5 @@
 import './projects.scss';
+import asp from '../../../assets/restaurant_api.png';
 import { useState } from 'react';
 
 export default function Projects(props) {
@@ -11,19 +12,27 @@ export default function Projects(props) {
         <section className="projects-section">
             <h1 className="header">{headings.professional}</h1>
             <h2 className="header">{types[0]}</h2>
-            <span className="paragraph">{frontEndProjects[0]}</span>
-            <br />
-            <span className="paragraph">{frontEndProjects[1]}</span>
-            <br />
-            <span className="paragraph">{frontEndProjects[2]}</span>
-            <br/>
+            {
+                frontEndProjects.map((f, i) => {
+                    return <span className="paragraph" key={`${f}_${i}`}>{frontEndProjects[i]}</span>
+                })
+            }
             <h2 className="header">{types[1]}</h2>
-            <span className="paragraph">{backEndProjects[0]}</span>
-            <br />
-            <span className="paragraph">{backEndProjects[1]}</span>
+            {
+                backEndProjects.map((b, i) => {
+                    return <span className="paragraph" key={`${b}_${i}`}>{backEndProjects[i]}</span>
+                })
+            }
             <h1 className="header">{headings.independent}</h1>
-            <span>Will be added soon</span>
-            {/* <span className="paragraph">projects</span> */}
+            <section className="independent">
+                <div className="project-details">
+                    <span>C# ASP.Net Core</span>
+                    <span>SQL Server</span>
+                    <span>A back end rest microservice built out to mimic the typical crud operations performed by most restaurant applications.</span>
+                </div>
+                <img className="project" src={asp} alt="A back end micro service running within a chrome browser via swagger" />
+            </section>
+            <span>More too come..</span>
         </section>
     );
 }

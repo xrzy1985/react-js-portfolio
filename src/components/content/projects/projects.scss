@@ -10,12 +10,16 @@
     margin: 20px 0;
     gap: 20px;
 
+    h2 {
+        font-size: 1.25em !important;
+    }
+
     .header {
         color: var(--secondary);
         text-shadow: 1.5px 1px var(--primary);
     }
 
-    span {
+    .paragraph {
         margin: 0 100px;
         text-indent: 50px;
 
@@ -27,6 +31,26 @@
         @media screen and (max-width: 420px) {
             margin: 0 25px;
             text-indent: 20px;
+        }
+    }
+
+    .independent {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10vw;
+        margin: 0 100px;
+
+        .project {
+            height: 20vh;
+            width: 40vw;
+        }
+
+        .project-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2vh;
         }
     }
 }
