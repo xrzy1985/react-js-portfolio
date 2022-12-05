@@ -11,6 +11,11 @@
         margin: 20px 0;
         gap: 20px;
 
+        .header {
+            color: var(--secondary);
+            text-shadow: 1.5px 1px var(--primary);
+        }
+
         span {
             margin: 0 100px;
             text-indent: 50px;

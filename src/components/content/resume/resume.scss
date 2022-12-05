@@ -8,6 +8,11 @@
     justify-content: center;
     margin: 20px 0;
     gap: 20px;
+
+    .header {
+        color: var(--secondary);
+        text-shadow: 1.5px 1px var(--primary);
+    }
     
     .links {
         display: flex;

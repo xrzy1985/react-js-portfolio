@@ -9,7 +9,7 @@ export default function WorkExperience(props) {
             {
                 work.map((experience, index) => {
                     return <div key={`experience_${index}`}>
-                            <h1>{experience.header}</h1>
+                            <h1 className="header">{experience.header}</h1>
                             { 
                                 !Array.isArray(experience.details) ? <span>{experience.details}</span> :
                                 <div className="tech">

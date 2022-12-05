@@ -33,7 +33,7 @@ export default function Header(props) {
         <header className="left-bar">
             <h1 className="wrapper shadow"> James Patterson </h1>
             <img onMouseOver={handleOnMouseOver} onMouseOut={handleOnMouseOver} src={changePhoto ? oil_photo : photo} alt={alts[0]} height="200px"/>
-            <h3 className="wrapper shadow">Front End Software Engineer</h3>
+            <h3 className="wrapper shadow"> Software Engineer </h3>
             <div className="links-bar">
                 {
                     sources.map((src, i) => {
