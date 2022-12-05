@@ -41,7 +41,7 @@ export default function Header(props) {
             <div className="paths wrapper">
                 {
                     selections.map((s, i) => {
-                        return <span onClick={() => {setSelected(s)}} key={s} style={selected === s ? selectedCss : null }>{s}</span>
+                        return <span className="profile-links" onClick={() => {setSelected(s)}} key={s} style={selected === s ? selectedCss : null }>{s}</span>
                     })
                 }
             </div>

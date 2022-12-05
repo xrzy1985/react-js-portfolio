@@ -53,6 +53,10 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+
+        .profile-links {
+            cursor: pointer;
+        }
     }
 
     .content {
