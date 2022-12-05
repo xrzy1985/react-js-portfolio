@@ -4,6 +4,7 @@ import linkedIn from '../../assets/linkedIn.png';
 import github from '../../assets/github.svg';
 import email from '../../assets/email.png';
 import photo from '../../assets/profile.jpg';
+import oil_photo from '../../assets/profile_oil_painting.png';
 import react from '../../assets/react.svg';
 import html from '../../assets/html.png';
 import scss from '../../assets/scss.png';
@@ -12,6 +13,7 @@ import { useEffect, useState } from 'react';
 
 export default function Header(props) {
     const [alts] = useState(props.state.alts);
+    const [changePhoto, setChangePhoto] = useState(false);
     const [links] = useState(props.state.links);
     const [selections] = useState(props.selections);
     const [selected, setSelected] = useState(selections[0]);
@@ -22,11 +24,15 @@ export default function Header(props) {
     useEffect(() => {
         props.changeContent(selected);
     }, [props, selected]);
+
+    const handleOnMouseOver = (event) => {
+        setChangePhoto(changePhoto ? false : true);
+    };
     
     return (
         <header className="left-bar">
             <h1 className="wrapper shadow"> James Patterson </h1>
-            <img src={photo} alt={alts[0]} height="200px"/>
+            <img onMouseOver={handleOnMouseOver} onMouseOut={handleOnMouseOver} src={changePhoto ? oil_photo : photo} alt={alts[0]} height="200px"/>
             <h3 className="wrapper shadow">Front End Software Engineer</h3>
             <div className="links-bar">
                 {
