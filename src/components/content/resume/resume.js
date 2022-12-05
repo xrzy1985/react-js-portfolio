@@ -16,10 +16,11 @@ export default function Resume(props) {
             <h2>{props.state.resumeHeader}</h2>
             <section className="links">
                 {
-                    state.links.map(link => {
-                        return <span>
-                            <a href={process.env.PUBLIC_URL + `${state.path}${link.path}`} download rel="noreferrer" target="_blank">
-                                <img src={link.src} alt={link.alt} />
+                    state.links.map((link, index) => {
+                        return <span key={`resume_span_${index}`}>
+                            <a href={process.env.PUBLIC_URL + `${state.path}${link.path}`}
+                                download rel="noreferrer" target="_blank" key={`resume_${index}`}>
+                                <img src={link.src} alt={link.alt} key={`resume_img_${index}`}/>
                             </a>
                         </span>
                     })

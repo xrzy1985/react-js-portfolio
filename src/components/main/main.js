@@ -1,8 +1,9 @@
 import './main.scss';
 import About from '../content/about/about';
 import Header from '../header/header';
-import WorkExperience from '../content/work/work';
+import Projects from '../content/projects/projects';
 import Resume from '../content/resume/resume';
+import WorkExperience from '../content/work/work';
 import { useState } from 'react';
 
 export default function Main(props) {
@@ -16,7 +17,7 @@ export default function Main(props) {
             case selections[0]:
                 return <About selected={selected} state={props.state}/>
             case selections[1]:
-                return <div>Coming soon</div>
+                return <Projects selected={selected} state={props.state}/>
             case selections[2]:
                 return <Resume selected={selected} state={props.state}/>
             case selections[3]:
