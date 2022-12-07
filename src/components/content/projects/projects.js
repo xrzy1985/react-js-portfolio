@@ -28,6 +28,7 @@ export default function Projects(props) {
                 <div className="project-details">
                     <span>C# ASP.Net Core</span>
                     <span>SQL Server</span>
+                    <span><a href="https://github.com/xrzy1985/Restaurant_API">Github Link</a></span>
                     <span>A back end rest microservice built out to mimic the typical crud operations performed by most restaurant applications.</span>
                 </div>
                 <img className="project" src={asp} alt="A back end micro service running within a chrome browser via swagger" />
